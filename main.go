@@ -20,11 +20,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	//b, err := json.Marshal(eventList)
-	//if err != nil {
-//		panic(err)
-//	}
-//	fmt.Println(string(b))
 	fr := findReachability(cves, eventList)
 	for _, cve := range fr {
 		if cve.Reachable {
@@ -34,22 +29,23 @@ func main() {
 }
 
 func pkgListToMap() (map[string][]interface{}, error) {
-	v, err := os.ReadFile("pkglist.json")
+	v, err := os.ReadFile("scan_result.json")
 	if err != nil {
 		return nil, err
 	}
-	var pkglist []interface{}
-	err = json.Unmarshal(v, &pkglist)
+	var report map[string]interface{}
+	err = json.Unmarshal(v, &report)
 	if err != nil {
 		return nil, err
 	}
+	results, ok := report["Results"].([]interface{})
 	pkgn := map[string][]interface{}{}
-	for _, pl := range pkglist {
-		p, ok := pl.(map[string]interface{})
-		if ok {
-			pkg, ok := p["Packages"].([]interface{})
+	if ok {
+		for _, r := range results {
+			res := r.(map[string]interface{})
+			pkgs, ok := res["Packages"].([]interface{})
 			if ok {
-				for _, pu := range pkg {
+				for _, pu := range pkgs {
 					pkgs := pu.(map[string]interface{})
 					pname := pkgs["ID"].(string)
 					ifs, ok := pkgs["InstalledFiles"].([]interface{})
@@ -135,9 +131,9 @@ func findReachability(cvePkgs []CvePkgs, eventList map[string]string) []CvePkgs 
 	newCvePkgs := []CvePkgs{}
 	for _, cve := range cvePkgs {
 		for _, f := range cve.InstalledFiles {
-			filePath:=f.(string)
-			if strings.Contains(filePath,"-linux-gnu"){
-				filePath=strings.ReplaceAll(filePath,"x86_64","aarch64")
+			filePath := f.(string)
+			if strings.Contains(filePath, "-linux-gnu") {
+				filePath = strings.ReplaceAll(filePath, "x86_64", "aarch64")
 			}
 			if _, ok := eventList[filePath]; ok {
 				cve.Reachable = true
