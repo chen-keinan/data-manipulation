@@ -1,0 +1,2259 @@
+{
+    "ContainerRuntimeSbom": [
+        {
+            "ContainerName": "web",
+            "ImageID": "nginx:latest",
+            "ImageDigest": "nginx@sha256:2bdc49f2f8ae8d8dc50ed00f2ee56d00385c6f8bc8a8b320d0a294d9e3b49026",
+            "Events": [
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/docker-entrypoint.sh",
+                        "/docker-entrypoint.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/docker-entrypoint.sh",
+                        "/docker-entrypoint.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/dev/null",
+                        "/dev/null"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/find",
+                        "/usr/bin/find"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/find",
+                        "/usr/bin/find"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/find"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/find"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libselinux.so.1",
+                        "/lib/aarch64-linux-gnu/libselinux.so.1"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libselinux.so.1",
+                        "/lib/aarch64-linux-gnu/libselinux.so.1"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libm.so.6",
+                        "/lib/aarch64-linux-gnu/libm.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libm.so.6",
+                        "/lib/aarch64-linux-gnu/libm.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libpcre2-8.so.0.11.2",
+                        "/lib/aarch64-linux-gnu/libpcre2-8.so.0"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libpcre2-8.so.0.11.2",
+                        "/lib/aarch64-linux-gnu/libpcre2-8.so.0"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/proc/filesystems",
+                        "/proc/filesystems"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/",
+                        "."
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "diff",
+                        "."
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/docker-entrypoint.d",
+                        "/docker-entrypoint.d/"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/docker-entrypoint.d",
+                        "/docker-entrypoint.d/"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "getdents64",
+                    "FilesPath": [
+                        "/docker-entrypoint.d",
+                        "/docker-entrypoint.d/"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "getdents64",
+                    "FilesPath": [
+                        "/docker-entrypoint.d",
+                        "/docker-entrypoint.d/"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "getdents64",
+                    "FilesPath": [
+                        "/docker-entrypoint.d",
+                        "/docker-entrypoint.d/"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "getdents64",
+                    "FilesPath": [
+                        "/docker-entrypoint.d",
+                        "/docker-entrypoint.d/"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "getdents64",
+                    "FilesPath": [
+                        "/docker-entrypoint.d",
+                        "/docker-entrypoint.d/"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/find",
+                        "/usr/bin/find"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/find",
+                        "/usr/bin/find"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/find"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/find"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libselinux.so.1",
+                        "/lib/aarch64-linux-gnu/libselinux.so.1"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libselinux.so.1",
+                        "/lib/aarch64-linux-gnu/libselinux.so.1"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libm.so.6",
+                        "/lib/aarch64-linux-gnu/libm.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libm.so.6",
+                        "/lib/aarch64-linux-gnu/libm.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/sort",
+                        "/usr/bin/sort"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/sort",
+                        "/usr/bin/sort"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/sort"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/sort"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libpcre2-8.so.0.11.2",
+                        "/lib/aarch64-linux-gnu/libpcre2-8.so.0"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libpcre2-8.so.0.11.2",
+                        "/lib/aarch64-linux-gnu/libpcre2-8.so.0"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/proc/filesystems",
+                        "/proc/filesystems"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/",
+                        "."
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "diff",
+                        "."
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/docker-entrypoint.d",
+                        "/docker-entrypoint.d/"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/docker-entrypoint.d",
+                        "/docker-entrypoint.d/"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "getdents64",
+                    "FilesPath": [
+                        "/docker-entrypoint.d",
+                        "/docker-entrypoint.d/"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "getdents64",
+                    "FilesPath": [
+                        "/docker-entrypoint.d",
+                        "/docker-entrypoint.d/"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "getdents64",
+                    "FilesPath": [
+                        "/docker-entrypoint.d",
+                        "/docker-entrypoint.d/"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "getdents64",
+                    "FilesPath": [
+                        "/docker-entrypoint.d",
+                        "/docker-entrypoint.d/"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "getdents64",
+                    "FilesPath": [
+                        "/docker-entrypoint.d",
+                        "/docker-entrypoint.d/"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/docker-entrypoint.d/10-listen-on-ipv6-by-default.sh",
+                        "/docker-entrypoint.d/10-listen-on-ipv6-by-default.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/docker-entrypoint.d/10-listen-on-ipv6-by-default.sh",
+                        "/docker-entrypoint.d/10-listen-on-ipv6-by-default.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/dash",
+                        "/docker-entrypoint.d/10-listen-on-ipv6-by-default.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/dash",
+                        "/docker-entrypoint.d/10-listen-on-ipv6-by-default.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/docker-entrypoint.d/10-listen-on-ipv6-by-default.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/docker-entrypoint.d/10-listen-on-ipv6-by-default.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/docker-entrypoint.d/10-listen-on-ipv6-by-default.sh",
+                        "/docker-entrypoint.d/10-listen-on-ipv6-by-default.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/docker-entrypoint.d/10-listen-on-ipv6-by-default.sh",
+                        "/docker-entrypoint.d/10-listen-on-ipv6-by-default.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/basename",
+                        "/usr/bin/basename"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/basename",
+                        "/usr/bin/basename"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/basename"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/basename"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/dev/null",
+                        "/dev/null"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/touch",
+                        "/usr/bin/touch"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/touch",
+                        "/usr/bin/touch"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/touch"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/touch"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/conf.d/default.conf",
+                        "/etc/nginx/conf.d/default.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/conf.d/default.conf",
+                        "/etc/nginx/conf.d/default.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/var/lib/docker/overlay2/da1dc1a27c4fe1a1440d96d0b307859651b2a86c3fe73eaeceeede364a12e8c5/work/work/#1447923",
+                        "/etc/nginx/conf.d/default.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/var/lib/docker/overlay2/da1dc1a27c4fe1a1440d96d0b307859651b2a86c3fe73eaeceeede364a12e8c5/work/work/#1447923",
+                        "/etc/nginx/conf.d/default.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/grep",
+                        "/usr/bin/grep"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/grep",
+                        "/usr/bin/grep"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/grep"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/grep"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libpcre2-8.so.0.11.2",
+                        "/lib/aarch64-linux-gnu/libpcre2-8.so.0"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libpcre2-8.so.0.11.2",
+                        "/lib/aarch64-linux-gnu/libpcre2-8.so.0"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/proc/15/maps",
+                        "/proc/self/maps"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/conf.d/default.conf",
+                        "/etc/nginx/conf.d/default.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/var/lib/docker/overlay2/da1dc1a27c4fe1a1440d96d0b307859651b2a86c3fe73eaeceeede364a12e8c5/work/work/#1447923",
+                        "/etc/nginx/conf.d/default.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/os-release",
+                        "/etc/os-release"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/os-release",
+                        "/etc/os-release"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/dpkg-query",
+                        "/usr/bin/dpkg-query"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/dpkg-query",
+                        "/usr/bin/dpkg-query"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/dpkg-query"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/dpkg-query"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/cut",
+                        "/usr/bin/cut"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/grep",
+                        "/usr/bin/grep"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/cut",
+                        "/usr/bin/cut"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/cut"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/grep",
+                        "/usr/bin/grep"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/grep"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/grep"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/cut"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libpcre2-8.so.0.11.2",
+                        "/lib/aarch64-linux-gnu/libpcre2-8.so.0"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libpcre2-8.so.0.11.2",
+                        "/lib/aarch64-linux-gnu/libpcre2-8.so.0"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libmd.so.0.0.5",
+                        "/lib/aarch64-linux-gnu/libmd.so.0"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libmd.so.0.0.5",
+                        "/lib/aarch64-linux-gnu/libmd.so.0"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/var/lib/dpkg/status",
+                        "/var/lib/dpkg/status"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/var/lib/dpkg/status",
+                        "/var/lib/dpkg/status"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/var/lib/dpkg/updates",
+                        "/var/lib/dpkg/updates"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/var/lib/dpkg/updates",
+                        "/var/lib/dpkg/updates"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/var/lib/dpkg/triggers/File",
+                        "/var/lib/dpkg/triggers/File"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/var/lib/dpkg/triggers/File",
+                        "/var/lib/dpkg/triggers/File"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/proc/18/maps",
+                        "/proc/self/maps"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/var/lib/dpkg/triggers/Unincorp",
+                        "/var/lib/dpkg/triggers/Unincorp"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/var/lib/dpkg/triggers/Unincorp",
+                        "/var/lib/dpkg/triggers/Unincorp"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/dev/null",
+                        "/dev/null"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/md5sum",
+                        "/usr/bin/md5sum"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/md5sum",
+                        "/usr/bin/md5sum"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/md5sum"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/md5sum"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/conf.d/default.conf",
+                        "/etc/nginx/conf.d/default.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/var/lib/docker/overlay2/da1dc1a27c4fe1a1440d96d0b307859651b2a86c3fe73eaeceeede364a12e8c5/work/work/#1447923",
+                        "/etc/nginx/conf.d/default.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/sed",
+                        "/usr/bin/sed"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/sed",
+                        "/usr/bin/sed"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/sed"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/sed"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libacl.so.1.1.2301",
+                        "/lib/aarch64-linux-gnu/libacl.so.1"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libacl.so.1.1.2301",
+                        "/lib/aarch64-linux-gnu/libacl.so.1"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libselinux.so.1",
+                        "/lib/aarch64-linux-gnu/libselinux.so.1"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libselinux.so.1",
+                        "/lib/aarch64-linux-gnu/libselinux.so.1"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libpcre2-8.so.0.11.2",
+                        "/lib/aarch64-linux-gnu/libpcre2-8.so.0"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libpcre2-8.so.0.11.2",
+                        "/lib/aarch64-linux-gnu/libpcre2-8.so.0"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/proc/filesystems",
+                        "/proc/filesystems"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/conf.d/default.conf",
+                        "/etc/nginx/conf.d/default.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/var/lib/docker/overlay2/da1dc1a27c4fe1a1440d96d0b307859651b2a86c3fe73eaeceeede364a12e8c5/work/work/#1447923",
+                        "/etc/nginx/conf.d/default.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/conf.d/sedq4x9XQ",
+                        "/etc/nginx/conf.d/sedq4x9XQ"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/conf.d/sedq4x9XQ",
+                        "/etc/nginx/conf.d/sedq4x9XQ"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/docker-entrypoint.d/15-local-resolvers.envsh",
+                        "/docker-entrypoint.d/15-local-resolvers.envsh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/docker-entrypoint.d/15-local-resolvers.envsh",
+                        "/docker-entrypoint.d/15-local-resolvers.envsh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/docker-entrypoint.d/20-envsubst-on-templates.sh",
+                        "/docker-entrypoint.d/20-envsubst-on-templates.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/docker-entrypoint.d/20-envsubst-on-templates.sh",
+                        "/docker-entrypoint.d/20-envsubst-on-templates.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/dash",
+                        "/docker-entrypoint.d/20-envsubst-on-templates.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/dash",
+                        "/docker-entrypoint.d/20-envsubst-on-templates.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/docker-entrypoint.d/20-envsubst-on-templates.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/docker-entrypoint.d/20-envsubst-on-templates.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/docker-entrypoint.d/20-envsubst-on-templates.sh",
+                        "/docker-entrypoint.d/20-envsubst-on-templates.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/docker-entrypoint.d/20-envsubst-on-templates.sh",
+                        "/docker-entrypoint.d/20-envsubst-on-templates.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/basename",
+                        "/usr/bin/basename"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/basename",
+                        "/usr/bin/basename"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/basename"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/basename"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/dev/null",
+                        "/dev/null"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/mawk",
+                        "/usr/bin/awk"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/mawk",
+                        "/usr/bin/awk"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/awk"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/awk"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libm.so.6",
+                        "/lib/aarch64-linux-gnu/libm.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libm.so.6",
+                        "/lib/aarch64-linux-gnu/libm.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/docker-entrypoint.d/30-tune-worker-processes.sh",
+                        "/docker-entrypoint.d/30-tune-worker-processes.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/docker-entrypoint.d/30-tune-worker-processes.sh",
+                        "/docker-entrypoint.d/30-tune-worker-processes.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/dash",
+                        "/docker-entrypoint.d/30-tune-worker-processes.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/dash",
+                        "/docker-entrypoint.d/30-tune-worker-processes.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/docker-entrypoint.d/30-tune-worker-processes.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/docker-entrypoint.d/30-tune-worker-processes.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/docker-entrypoint.d/30-tune-worker-processes.sh",
+                        "/docker-entrypoint.d/30-tune-worker-processes.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/docker-entrypoint.d/30-tune-worker-processes.sh",
+                        "/docker-entrypoint.d/30-tune-worker-processes.sh"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/basename",
+                        "/usr/bin/basename"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/bin/basename",
+                        "/usr/bin/basename"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/basename"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/bin/basename"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/sbin/nginx",
+                        "/usr/sbin/nginx"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/sbin/nginx",
+                        "/usr/sbin/nginx"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/sbin/nginx"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "execve",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1",
+                        "/usr/sbin/nginx"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ld.so.cache",
+                        "/etc/ld.so.cache"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libcrypt.so.1.1.0",
+                        "/lib/aarch64-linux-gnu/libcrypt.so.1"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libcrypt.so.1.1.0",
+                        "/lib/aarch64-linux-gnu/libcrypt.so.1"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libpcre2-8.so.0.11.2",
+                        "/lib/aarch64-linux-gnu/libpcre2-8.so.0"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libpcre2-8.so.0.11.2",
+                        "/lib/aarch64-linux-gnu/libpcre2-8.so.0"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libssl.so.3",
+                        "/lib/aarch64-linux-gnu/libssl.so.3"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libssl.so.3",
+                        "/lib/aarch64-linux-gnu/libssl.so.3"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libcrypto.so.3",
+                        "/lib/aarch64-linux-gnu/libcrypto.so.3"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libcrypto.so.3",
+                        "/lib/aarch64-linux-gnu/libcrypto.so.3"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libz.so.1.2.13",
+                        "/lib/aarch64-linux-gnu/libz.so.1"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libz.so.1.2.13",
+                        "/lib/aarch64-linux-gnu/libz.so.1"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/lib/aarch64-linux-gnu/libc.so.6",
+                        "/lib/aarch64-linux-gnu/libc.so.6"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/share/zoneinfo/Etc/UTC",
+                        "/etc/localtime"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/usr/share/zoneinfo/Etc/UTC",
+                        "/etc/localtime"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/dev/pts/0",
+                        "/var/log/nginx/error.log"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ssl/openssl.cnf",
+                        "/usr/lib/ssl/openssl.cnf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/ssl/openssl.cnf",
+                        "/usr/lib/ssl/openssl.cnf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/sys/devices/system/cpu/online",
+                        "/sys/devices/system/cpu/online"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/nginx.conf",
+                        "/etc/nginx/nginx.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/nginx.conf",
+                        "/etc/nginx/nginx.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nsswitch.conf",
+                        "/etc/nsswitch.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nsswitch.conf",
+                        "/etc/nsswitch.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/passwd",
+                        "/etc/passwd"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/passwd",
+                        "/etc/passwd"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/group",
+                        "/etc/group"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/group",
+                        "/etc/group"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/mime.types",
+                        "/etc/nginx/mime.types"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/mime.types",
+                        "/etc/nginx/mime.types"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/conf.d",
+                        "/etc/nginx/conf.d"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/conf.d",
+                        "/etc/nginx/conf.d"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "getdents64",
+                    "FilesPath": [
+                        "/etc/nginx/conf.d",
+                        "/etc/nginx/conf.d"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "getdents64",
+                    "FilesPath": [
+                        "/etc/nginx/conf.d",
+                        "/etc/nginx/conf.d"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/conf.d/default.conf",
+                        "/etc/nginx/conf.d/default.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/nginx/conf.d/default.conf",
+                        "/etc/nginx/conf.d/default.conf"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/dev/pts/0",
+                        "/var/log/nginx/error.log"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/dev/pts/0",
+                        "/var/log/nginx/access.log"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/run/nginx.pid",
+                        "/var/run/nginx.pid"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/run/nginx.pid",
+                        "/var/run/nginx.pid"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/proc/sys/kernel/ngroups_max",
+                        "/proc/sys/kernel/ngroups_max"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/proc/sys/kernel/ngroups_max",
+                        "/proc/sys/kernel/ngroups_max"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/group",
+                        "/etc/group"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/group",
+                        "/etc/group"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/group",
+                        "/etc/group"
+                    ]
+                },
+                {
+                    "Name": "security_file_open",
+                    "SysCall": "openat",
+                    "FilesPath": [
+                        "/etc/group",
+                        "/etc/group"
+                    ]
+                }
+            ]
+        }
+    ]
+}

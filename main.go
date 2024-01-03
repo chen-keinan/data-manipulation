@@ -20,6 +20,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	b, _ := json.Marshal(runtimeSbom)
+	os.WriteFile("runtime_sbom.json", b, 0644)
 
 	fr := findReachability(cves, runtimeSbom)
 	for _, cve := range fr {
@@ -138,9 +140,9 @@ func eventsToRuntimeSbom() (*RunTimeSbom, error) {
 				if id, ok := container["image"].(string); ok {
 					if sbom, ok := containerSbomMap[id]; ok {
 						newEvent := Event{
-							filesPath: filepaths,
-							name:      name,
-							sysCall:   sysCall,
+							FilesPath: filepaths,
+							Name:      name,
+							SysCall:   sysCall,
 						}
 						sbom.Events = append(sbom.Events, newEvent)
 					} else {
@@ -150,9 +152,9 @@ func eventsToRuntimeSbom() (*RunTimeSbom, error) {
 							ImageDigest:   container["imageDigest"].(string),
 							Events: []Event{
 								{
-									name:      name,
-									sysCall:   sysCall,
-									filesPath: filepaths,
+									Name:      name,
+									SysCall:   sysCall,
+									FilesPath: filepaths,
 								},
 							},
 						}
@@ -168,7 +170,7 @@ func runTimeSbomToMap(runtimeSbom *RunTimeSbom) map[string]string {
 	eventList := map[string]string{}
 	for _, cr := range runtimeSbom.ContainerRuntimeSbom {
 		for _, e := range cr.Events {
-			for _, f := range e.filesPath {
+			for _, f := range e.FilesPath {
 				eventList[f] = f
 			}
 		}
@@ -203,7 +205,7 @@ type ContainerRuntimeSbom struct {
 }
 
 type Event struct {
-	name      string
-	sysCall   string
-	filesPath []string
+	Name      string
+	SysCall   string
+	FilesPath []string
 }
