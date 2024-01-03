@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	lo "github.com/samber/lo"
 	"os"
 )
 
@@ -15,11 +16,12 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	eventList, err := eventsToMap()
+	runtimeSbom, err := eventsToRuntimeSbom()
 	if err != nil {
 		panic(err)
 	}
-	fr := findReachability(cves, eventList)
+
+	fr := findReachability(cves, runtimeSbom)
 	for _, cve := range fr {
 		if cve.Reachable {
 			fmt.Printf("Vulnerability %s is reachable\n", cve.CveID)
@@ -96,8 +98,8 @@ type CvePkgs struct {
 	Reachable      bool
 }
 
-func eventsToMap() (map[string]string, error) {
-	v, err := os.ReadFile("runtime.json")
+func eventsToRuntimeSbom() (*RunTimeSbom, error) {
+	v, err := os.ReadFile("runtime_events.json")
 	if err != nil {
 		return nil, err
 	}
@@ -106,9 +108,11 @@ func eventsToMap() (map[string]string, error) {
 	if err != nil {
 		return nil, err
 	}
-	eventList := map[string]string{}
+
+	containerSbomMap := map[string]*ContainerRuntimeSbom{}
 	for _, pl := range runtimeEvents {
 		p, ok := pl.(map[string]interface{})
+		filepaths := []string{}
 		if ok {
 			args, ok := p["args"].([]interface{})
 			if ok {
@@ -116,26 +120,90 @@ func eventsToMap() (map[string]string, error) {
 					pkgs := pu.(map[string]interface{})
 					aname := pkgs["name"].(string)
 					if aname == "syscall_pathname" || aname == "pathname" {
-						aValue := pkgs["value"].(string)
-						eventList[aValue] = aValue
+						filepaths = append(filepaths, pkgs["value"].(string))
+
+					}
+				}
+			}
+			name, ok := p["eventName"].(string)
+			if !ok {
+				continue
+			}
+			sysCall, ok := p["syscall"].(string)
+			if !ok {
+				continue
+			}
+			container, ok := p["container"].(map[string]interface{})
+			if ok {
+				if id, ok := container["image"].(string); ok {
+					if sbom, ok := containerSbomMap[id]; ok {
+						newEvent := Event{
+							filesPath: filepaths,
+							name:      name,
+							sysCall:   sysCall,
+						}
+						sbom.Events = append(sbom.Events, newEvent)
+					} else {
+						containerSbomMap[id] = &ContainerRuntimeSbom{
+							ContainerName: container["name"].(string),
+							ImageID:       container["image"].(string),
+							ImageDigest:   container["imageDigest"].(string),
+							Events: []Event{
+								{
+									name:      name,
+									sysCall:   sysCall,
+									filesPath: filepaths,
+								},
+							},
+						}
 					}
 				}
 			}
 		}
 	}
-	return eventList, nil
+	return &RunTimeSbom{ContainerRuntimeSbom: lo.Values(containerSbomMap)}, nil
 }
 
-func findReachability(cvePkgs []CvePkgs, eventList map[string]string) []CvePkgs {
+func runTimeSbomToMap(runtimeSbom *RunTimeSbom) map[string]string {
+	eventList := map[string]string{}
+	for _, cr := range runtimeSbom.ContainerRuntimeSbom {
+		for _, e := range cr.Events {
+			for _, f := range e.filesPath {
+				eventList[f] = f
+			}
+		}
+	}
+	return eventList
+}
+
+func findReachability(cvePkgs []CvePkgs, runtimeSbom *RunTimeSbom) []CvePkgs {
 	newCvePkgs := []CvePkgs{}
+	eventMap := runTimeSbomToMap(runtimeSbom)
 	for _, cve := range cvePkgs {
 		for _, f := range cve.InstalledFiles {
 			filePath := f.(string)
-			if _, ok := eventList[filePath]; ok {
+			if _, ok := eventMap[filePath]; ok {
 				cve.Reachable = true
 				newCvePkgs = append(newCvePkgs, cve)
 			}
 		}
 	}
 	return newCvePkgs
+}
+
+type RunTimeSbom struct {
+	ContainerRuntimeSbom []*ContainerRuntimeSbom
+}
+
+type ContainerRuntimeSbom struct {
+	ContainerName string
+	ImageID       string
+	ImageDigest   string
+	Events        []Event
+}
+
+type Event struct {
+	name      string
+	sysCall   string
+	filesPath []string
 }
