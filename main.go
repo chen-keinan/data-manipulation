@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"strings"
 )
 
 func main() {
@@ -132,9 +131,6 @@ func findReachability(cvePkgs []CvePkgs, eventList map[string]string) []CvePkgs 
 	for _, cve := range cvePkgs {
 		for _, f := range cve.InstalledFiles {
 			filePath := f.(string)
-			if strings.Contains(filePath, "-linux-gnu") {
-				filePath = strings.ReplaceAll(filePath, "x86_64", "aarch64")
-			}
 			if _, ok := eventList[filePath]; ok {
 				cve.Reachable = true
 				newCvePkgs = append(newCvePkgs, cve)
