@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 
-	//"fmt"
 	"os"
 	"strings"
 
@@ -37,19 +36,22 @@ func main() {
 	b, _ := json.Marshal(te)
 	os.WriteFile("runtime_sbom.json", b, 0644)
 
-	fr := findReachability(cves, te)
+	reachableCves := findReachability(cves, te)
 
 	printCVE := make(map[string]bool)
-	for _, cve := range fr {
-		if cve.Reachable {
-			if _, ok := printCVE[cve.CveID]; !ok {
-				printCVE[cve.CveID] = true
-				fmt.Printf(" %s is reachable\n", cve.CveID)
+	for _, rc := range reachableCves {
+		if rc.Reachable {
+			if _, ok := printCVE[rc.CveID]; !ok {
+				printCVE[rc.CveID] = true
+				fmt.Printf(" %s is reachable\n", rc.CveID)
 			}
 		}
 	}
-	fmt.Println("Total CVEs: ", len(cves))
-	fmt.Println("Total reachable CVEs: ", len(printCVE))
+	fmt.Println("----------------------------")
+	fmt.Println(fmt.Sprintf("| Total CVEs: %d          |", len(cves)))
+	fmt.Println("----------------------------") 
+	fmt.Println(fmt.Sprintf("| Total reachable CVEs: %d |", len(printCVE)))
+	fmt.Println("----------------------------")
 }
 
 func LoadTraceeEvent(eventFilePath string) (*TraceeSbom, error) {
@@ -234,18 +236,18 @@ func runTimeSbomToMap(traceeSbom *TraceeSbom) map[string]string {
 }
 
 func findReachability(cvePkgs []CvePkgs, ts *TraceeSbom) []CvePkgs {
-	newCvePkgs := []CvePkgs{}
+	reachableCves := []CvePkgs{}
 	eventMap := runTimeSbomToMap(ts)
 	for _, cve := range cvePkgs {
 		for _, f := range cve.InstalledFiles {
 			filePath := f.(string)
 			if _, ok := eventMap[filePath]; ok {
 				cve.Reachable = true
-				newCvePkgs = append(newCvePkgs, cve)
+				reachableCves = append(reachableCves, cve)
 			}
 		}
 	}
-	return newCvePkgs
+	return reachableCves
 }
 
 type RunTimeSbom struct {
