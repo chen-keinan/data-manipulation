@@ -1,38 +1,91 @@
 package main
 
 import (
+	"bufio"
 	"encoding/json"
 	"fmt"
-	lo "github.com/samber/lo"
+
+	//"fmt"
 	"os"
+	"strings"
+
+	lo "github.com/samber/lo"
 )
 
 func main() {
-	pkgList, err := pkgListToMap()
+	args := os.Args[1:]
+	if len(args) < 2 {
+		fmt.Print("missing scan result or events args")
+		os.Exit(1)
+	}
+	te, err := LoadTraceeEvent(args[1])
 	if err != nil {
 		panic(err)
 	}
-	cves, err := mergeReportPkgs(pkgList)
+	pkgList, err := pkgListToMap(args[0])
+
 	if err != nil {
 		panic(err)
 	}
-	runtimeSbom, err := eventsToRuntimeSbom()
+
+	cves, err := mergeReportPkgs(pkgList, args[0])
+
 	if err != nil {
 		panic(err)
 	}
-	b, _ := json.Marshal(runtimeSbom)
+
+	b, _ := json.Marshal(te)
 	os.WriteFile("runtime_sbom.json", b, 0644)
 
-	fr := findReachability(cves, runtimeSbom)
+	fr := findReachability(cves, te)
+
+	printCVE := make(map[string]bool)
 	for _, cve := range fr {
 		if cve.Reachable {
-			fmt.Printf("Vulnerability %s is reachable\n", cve.CveID)
+			if _, ok := printCVE[cve.CveID]; !ok {
+				printCVE[cve.CveID] = true
+				fmt.Printf(" %s is reachable\n", cve.CveID)
+			}
 		}
 	}
+	fmt.Println("Total CVEs: ", len(cves))
+	fmt.Println("Total reachable CVEs: ", len(printCVE))
 }
 
-func pkgListToMap() (map[string][]interface{}, error) {
-	v, err := os.ReadFile("scan_result.json")
+func LoadTraceeEvent(eventFilePath string) (*TraceeSbom, error) {
+	file, err := os.Open(eventFilePath)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+	traceeEvents := make([]TracceEvent, 0)
+	// optionally, resize scanner's capacity for lines over 64K, see next example
+	for scanner.Scan() {
+		line := scanner.Text()
+		if !(strings.HasPrefix(line, "{") && strings.HasSuffix(line, "}")) {
+			continue
+		}
+		var event TracceEvent
+		err := json.Unmarshal([]byte(line), &event)
+		if err != nil {
+			return nil, err
+		}
+		if len(event.EventID) == 0 {
+			continue
+		}
+		traceeEvents = append(traceeEvents, event)
+	}
+
+	if err := scanner.Err(); err != nil {
+		return nil, err
+	}
+	return &TraceeSbom{TracceEvents: traceeEvents}, nil
+}
+
+func pkgListToMap(scanResultFile string) (map[string][]interface{}, error) {
+	v, err := os.ReadFile(scanResultFile)
 	if err != nil {
 		return nil, err
 	}
@@ -61,8 +114,8 @@ func pkgListToMap() (map[string][]interface{}, error) {
 	}
 	return pkgn, nil
 }
-func mergeReportPkgs(pkgList map[string][]interface{}) ([]CvePkgs, error) {
-	v, err := os.ReadFile("scan_result.json")
+func mergeReportPkgs(pkgList map[string][]interface{}, scanFilePath string) ([]CvePkgs, error) {
+	v, err := os.ReadFile(scanFilePath)
 	if err != nil {
 		return nil, err
 	}
@@ -166,21 +219,23 @@ func eventsToRuntimeSbom() (*RunTimeSbom, error) {
 	return &RunTimeSbom{ContainerRuntimeSbom: lo.Values(containerSbomMap)}, nil
 }
 
-func runTimeSbomToMap(runtimeSbom *RunTimeSbom) map[string]string {
+func runTimeSbomToMap(traceeSbom *TraceeSbom) map[string]string {
 	eventList := map[string]string{}
-	for _, cr := range runtimeSbom.ContainerRuntimeSbom {
-		for _, e := range cr.Events {
-			for _, f := range e.FilesPath {
-				eventList[f] = f
+	for _, te := range traceeSbom.TracceEvents {
+		for _, arg := range te.Args {
+			if arg.Name == "pathname" || arg.Name == "syscall_pathname" {
+				if vs, ok := arg.Value.(string); ok {
+					eventList[vs] = vs
+				}
 			}
 		}
 	}
 	return eventList
 }
 
-func findReachability(cvePkgs []CvePkgs, runtimeSbom *RunTimeSbom) []CvePkgs {
+func findReachability(cvePkgs []CvePkgs, ts *TraceeSbom) []CvePkgs {
 	newCvePkgs := []CvePkgs{}
-	eventMap := runTimeSbomToMap(runtimeSbom)
+	eventMap := runTimeSbomToMap(ts)
 	for _, cve := range cvePkgs {
 		for _, f := range cve.InstalledFiles {
 			filePath := f.(string)
@@ -208,4 +263,28 @@ type Event struct {
 	Name      string
 	SysCall   string
 	FilesPath []string
+}
+
+type TraceeSbom struct {
+	TracceEvents []TracceEvent
+}
+
+type TracceEvent struct {
+	EventID   string    `json:"eventName"`
+	Container Container `json:"container"`
+	SysCall   string    `json:"syscall"`
+	Args      []Args    `json:"args"`
+}
+
+type Container struct {
+	ID          string `json:"id"`
+	Name        string `json:"name"`
+	Image       string `json:"image"`
+	ImageDigest string `json:"imageDigest"`
+}
+
+type Args struct {
+	Name  string      `json:"name"`
+	Type  string      `json:"type"`
+	Value interface{} `json:"value"`
 }
