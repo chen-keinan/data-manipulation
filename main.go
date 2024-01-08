@@ -47,7 +47,7 @@ func main() {
 			if _, ok := printCVE[rc.CveID]; !ok {
 				printCVE[rc.CveID] = true
 				t.AppendRows([]table.Row{
-					{rc.CveID, rc.PkgID, rc.ReachableFile},
+					{rc.CveID, rc.PkgID, rc.ReachableFiles},
 				})
 				t.AppendSeparator()
 			}
@@ -156,7 +156,7 @@ type CvePkgs struct {
 	PkgID          string
 	InstalledFiles []interface{}
 	Reachable      bool
-	ReachableFile  string
+	ReachableFiles []string
 }
 
 func eventsToRuntimeSbom() (*RunTimeSbom, error) {
@@ -243,13 +243,17 @@ func findReachability(cvePkgs []CvePkgs, ts *TraceeSbom) []CvePkgs {
 	reachableCves := []CvePkgs{}
 	eventMap := runTimeSbomToMap(ts)
 	for _, cve := range cvePkgs {
+		reachable := make([]string, 0)
 		for _, f := range cve.InstalledFiles {
 			filePath := f.(string)
 			if _, ok := eventMap[filePath]; ok {
+				reachable = append(reachable, filePath)
 				cve.Reachable = true
-				cve.ReachableFile = filePath
-				reachableCves = append(reachableCves, cve)
 			}
+		}
+		if cve.Reachable {
+			cve.ReachableFiles = reachable
+			reachableCves = append(reachableCves, cve)
 		}
 	}
 	return reachableCves
