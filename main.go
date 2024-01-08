@@ -36,7 +36,8 @@ func main() {
 
 	b, _ := json.Marshal(te)
 	os.WriteFile("runtime_sbom.json", b, 0644)
-
+	var lastCve string
+	var lastPkg string
 	reachableCves := findReachability(cves, te)
 	t := table.NewWriter()
 	t.SetOutputMirror(os.Stdout)
@@ -51,10 +52,38 @@ func main() {
 				})
 				t.AppendSeparator()
 			}
+		} else {
+			lastCve = rc.CveID
+			lastPkg = rc.PkgID
 		}
 	}
 	t.AppendFooter(table.Row{"Total Cves", len(cves), "Total reachable CVEs", len(printCVE)})
 	t.Render()
+	fmt.Println()
+	fmt.Println("*************** Vex Report **********************")
+	vexReport := VexReport{
+		BomFormat:   "cyclonedx",
+		SpecVersion: "1.5",
+		Version:     "1",
+		Vulnerabilities: []VexVulnerability{
+			{ID: lastCve, Analysis: Analysis{
+				State:         "not_affected",
+				Justification: "code_not_reachable",
+				Response:      []string{"will_not_fix", "update"},
+				Detailes:      "The vulnerable package is not reachable",
+			}, Affects: []Affect{
+				{
+					Ref: lastPkg,
+				},
+			}},
+		},
+	}
+	vexData, err := json.MarshalIndent(vexReport, "", "\t")
+	//vexData, err := json.Marshal(vexReport)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Print(string(vexData))
 }
 
 func LoadTraceeEvent(eventFilePath string) (*TraceeSbom, error) {
@@ -253,8 +282,8 @@ func findReachability(cvePkgs []CvePkgs, ts *TraceeSbom) []CvePkgs {
 		}
 		if cve.Reachable {
 			cve.ReachableFiles = reachable
-			reachableCves = append(reachableCves, cve)
 		}
+		reachableCves = append(reachableCves, cve)
 	}
 	return reachableCves
 }
@@ -298,4 +327,27 @@ type Args struct {
 	Name  string      `json:"name"`
 	Type  string      `json:"type"`
 	Value interface{} `json:"value"`
+}
+
+type VexReport struct {
+	BomFormat       string             `json:"bomFormat"`
+	SpecVersion     string             `json:"specVersion"`
+	Version         string             `json:"version"`
+	Vulnerabilities []VexVulnerability `json:"vulnerabilities"`
+}
+
+type VexVulnerability struct {
+	ID       string   `json:"id"`
+	Analysis Analysis `json:"analysis"`
+	Affects  []Affect `json:"affects"`
+}
+type Analysis struct {
+	State         string   `json:"state"`
+	Justification string   `json:"justification"`
+	Response      []string `json:"response"`
+	Detailes      string   `json:"details"`
+}
+
+type Affect struct {
+	Ref string `json:"ref"`
 }
