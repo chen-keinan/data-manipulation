@@ -40,7 +40,7 @@ func main() {
 	reachableCves := findReachability(cves, te)
 	t := table.NewWriter()
 	t.SetOutputMirror(os.Stdout)
-	t.AppendHeader(table.Row{"CVE-ID", "Package", "Reachable File"})
+	t.AppendHeader(table.Row{"CVE-ID", "Package", "Reachable Files"})
 	printCVE := make(map[string]bool)
 	for _, rc := range reachableCves {
 		if rc.Reachable {
