@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
+	"github.com/jedib0t/go-pretty/v6/table"
 
 	"os"
 	"strings"
@@ -37,21 +38,23 @@ func main() {
 	os.WriteFile("runtime_sbom.json", b, 0644)
 
 	reachableCves := findReachability(cves, te)
-
+	t := table.NewWriter()
+	t.SetOutputMirror(os.Stdout)
+	t.AppendHeader(table.Row{"CVE-ID", "Package", "Reachable File"})
 	printCVE := make(map[string]bool)
 	for _, rc := range reachableCves {
 		if rc.Reachable {
 			if _, ok := printCVE[rc.CveID]; !ok {
 				printCVE[rc.CveID] = true
-				fmt.Printf(" %s is reachable\n", rc.CveID)
+				t.AppendRows([]table.Row{
+					{rc.CveID, rc.PkgID, rc.ReachableFile},
+				})
+				t.AppendSeparator()
 			}
 		}
 	}
-	fmt.Println("----------------------------")
-	fmt.Println(fmt.Sprintf("| Total CVEs: %d          |", len(cves)))
-	fmt.Println("----------------------------") 
-	fmt.Println(fmt.Sprintf("| Total reachable CVEs: %d |", len(printCVE)))
-	fmt.Println("----------------------------")
+	t.AppendFooter(table.Row{"Total Cves", len(cves), "Total reachable CVEs", len(printCVE)})
+	t.Render()
 }
 
 func LoadTraceeEvent(eventFilePath string) (*TraceeSbom, error) {
@@ -153,6 +156,7 @@ type CvePkgs struct {
 	PkgID          string
 	InstalledFiles []interface{}
 	Reachable      bool
+	ReachableFile  string
 }
 
 func eventsToRuntimeSbom() (*RunTimeSbom, error) {
@@ -243,6 +247,7 @@ func findReachability(cvePkgs []CvePkgs, ts *TraceeSbom) []CvePkgs {
 			filePath := f.(string)
 			if _, ok := eventMap[filePath]; ok {
 				cve.Reachable = true
+				cve.ReachableFile = filePath
 				reachableCves = append(reachableCves, cve)
 			}
 		}
