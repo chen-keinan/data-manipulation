@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
+
 	"github.com/jedib0t/go-pretty/v6/table"
 
 	"os"
@@ -36,54 +37,25 @@ func main() {
 
 	b, _ := json.Marshal(te)
 	os.WriteFile("runtime_sbom.json", b, 0644)
-	var lastCve string
-	var lastPkg string
 	reachableCves := findReachability(cves, te)
 	t := table.NewWriter()
 	t.SetOutputMirror(os.Stdout)
-	t.AppendHeader(table.Row{"CVE-ID", "Package", "Reachable Files"})
+	t.AppendHeader(table.Row{"CVE-ID", "Package", "Type", "Reachable Files"})
 	printCVE := make(map[string]bool)
 	for _, rc := range reachableCves {
 		if rc.Reachable {
 			if _, ok := printCVE[rc.CveID]; !ok {
 				printCVE[rc.CveID] = true
+				reachableFiles := strings.Join(rc.ReachableFiles, "\n")
 				t.AppendRows([]table.Row{
-					{rc.CveID, rc.PkgID, rc.ReachableFiles},
+					{rc.CveID, rc.PkgID, rc.pkgType, reachableFiles},
 				})
 				t.AppendSeparator()
 			}
-		} else {
-			lastCve = rc.CveID
-			lastPkg = rc.PkgID
 		}
 	}
 	t.AppendFooter(table.Row{"Total Cves", len(cves), "Total reachable CVEs", len(printCVE)})
 	t.Render()
-	fmt.Println()
-	fmt.Println("*************** Vex Report **********************")
-	vexReport := VexReport{
-		BomFormat:   "cyclonedx",
-		SpecVersion: "1.5",
-		Version:     "1",
-		Vulnerabilities: []VexVulnerability{
-			{ID: lastCve, Analysis: Analysis{
-				State:         "not_affected",
-				Justification: "code_not_reachable",
-				Response:      []string{"will_not_fix", "update"},
-				Detailes:      "The vulnerable package is not reachable",
-			}, Affects: []Affect{
-				{
-					Ref: lastPkg,
-				},
-			}},
-		},
-	}
-	vexData, err := json.MarshalIndent(vexReport, "", "\t")
-	//vexData, err := json.Marshal(vexReport)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Print(string(vexData))
 }
 
 func LoadTraceeEvent(eventFilePath string) (*TraceeSbom, error) {
@@ -137,7 +109,12 @@ func pkgListToMap(scanResultFile string) (map[string][]interface{}, error) {
 			if ok {
 				for _, pu := range pkgs {
 					pkgs := pu.(map[string]interface{})
-					pname := pkgs["ID"].(string)
+					var pname string
+					if _, ok := pkgs["ID"].(string); ok {
+						pname = pkgs["ID"].(string)
+					} else {
+						pname = fmt.Sprintf("%s:%s", pkgs["Name"].(string), pkgs["Version"].(string))
+					}
 					ifs, ok := pkgs["InstalledFiles"].([]interface{})
 					if ok {
 						pkgn[pname] = ifs
@@ -163,15 +140,20 @@ func mergeReportPkgs(pkgList map[string][]interface{}, scanFilePath string) ([]C
 	if ok {
 		for _, r := range results {
 			res := r.(map[string]interface{})
+			pkgType := res["Type"].(string)
 			Vulnerabilities := res["Vulnerabilities"].([]interface{})
 			for _, v := range Vulnerabilities {
 				vuln := v.(map[string]interface{})
-				pkgID := vuln["PkgID"].(string)
+				var pkgID string
+				if pkgID, ok = vuln["PkgID"].(string); !ok {
+					pkgID = fmt.Sprintf("%s:%s", vuln["PkgName"].(string), vuln["InstalledVersion"].(string))
+				}
 				if _, ok := pkgList[pkgID]; ok {
 					cvePkgs = append(cvePkgs, CvePkgs{
 						CveID:          vuln["VulnerabilityID"].(string),
 						PkgID:          pkgID,
 						InstalledFiles: pkgList[pkgID],
+						pkgType:        pkgType,
 					})
 				}
 			}
@@ -181,6 +163,7 @@ func mergeReportPkgs(pkgList map[string][]interface{}, scanFilePath string) ([]C
 }
 
 type CvePkgs struct {
+	pkgType        string
 	CveID          string
 	PkgID          string
 	InstalledFiles []interface{}
