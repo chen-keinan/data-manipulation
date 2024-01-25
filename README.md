@@ -10,6 +10,10 @@ docker run --name tracee -it --rm   --pid=host --cgroupns=host --privileged   -v
 
 ```sh
 docker run -it --rm -d -p 8080:80 --name web nginx
+
+or
+
+docker run -d jupyter/base-notebook:latest
 ```
 
 ## Scan Nginx with Trivy
