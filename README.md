@@ -14,6 +14,11 @@ docker run -it --rm -d -p 8080:80 --name web nginx
 or
 
 docker run -d jupyter/base-notebook:latest
+
+or 
+
+ docker run -d  -e NODE_ENV=development ghost
+
 ```
 
 ## Scan Nginx with Trivy
